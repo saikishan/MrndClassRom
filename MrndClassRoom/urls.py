@@ -22,6 +22,7 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+from myAuth.views import UserView
 
 urlpatterns = [
     url(r'^$', generic.RedirectView.as_view(
@@ -32,6 +33,7 @@ urlpatterns = [
         'rest_framework.urls', namespace='rest_framework')),
     url(r'^api/auth/token/obtain/$', TokenObtainPairView.as_view()),
     url(r'^api/auth/token/refresh/$', TokenRefreshView.as_view()),
+    path('api/myAuth/', include("myAuth.urls"))
 ]
 
 #have to rearrange

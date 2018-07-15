@@ -95,7 +95,7 @@ DATABASES = {
         'NAME': 'mrnd_class_stagging',
         'HOST': 'localhost',
         'USER':'root',
-        'PASSWORD': ''
+        'PASSWORD': 'root'
     }
 }
 
