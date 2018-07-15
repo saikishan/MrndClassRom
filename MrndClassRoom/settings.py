@@ -37,21 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'myAuth.apps.MyauthConfig',
 ]
-
-#restframework
-
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ),
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -84,18 +70,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'MrndClassRoom.wsgi.application'
 
 
-#AUTH_USER_MODEL = 'auth.Person'
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mrnd_class_stagging',
-        'HOST': 'localhost',
-        'USER':'root',
-        'PASSWORD': ''
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -118,7 +99,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTHENTICATION_BACKENDS = ['MrndClassRoom.my_auth_backend.ProxiedModelBackend', ]
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
